@@ -4,6 +4,7 @@ import Modal from "./Modal";
 
 function Course(props) {
     const [isOpen, setIsOpen] = useState(false);
+    const [myTitle, setMyTitle] = useState(props.title)
 
     function deleteHandler() {
         console.log("Clicked !");
@@ -21,12 +22,17 @@ function Course(props) {
         // setIsOpen(true);
         setIsOpen(prevIsOpen => !prevIsOpen);
     }
+
+    function changeTitle() {
+        setMyTitle('Title Changed');
+    }
     return (
         <div>
             <div className="card">
-                <h2>{props.title}</h2>
+                <h2>{myTitle}</h2>
                 <div className="actions">
                     <button onClick={deleteHandler} className="btn">Delete</button>
+                    <button onClick={changeTitle} className="btn">Change</button>
                 </div>
             </div>
 
