@@ -8,9 +8,10 @@ function Course(props) {
 
     function deleteHandler() {
         console.log("Clicked !");
-        console.log(props.title);
+        props.onDelete(props.id);
+        //console.log(props.title);
         // setIsOpen(true);
-        setIsOpen(prevIsOpen => !prevIsOpen);
+        //setIsOpen(prevIsOpen => !prevIsOpen);
     }
     function confirmHandler() {
         console.log("Confirm !");
